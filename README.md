@@ -5,8 +5,8 @@ table will dynamically update for every request.
 
 Query Example:
 
-- Total Deaths for <countryname>
-- Increasing percentage of positive in <countryname>
+- Total Deaths for \<countryname\>
+- Increasing percentage of positive in \<countryname\>
 
 # Getting Started 
 
