@@ -29,8 +29,8 @@ function App() {
       );
       if (response.ok) {
         const data = await response.json();
-        console.log(data.data);
-        setData(data.data);
+        console.log(data);
+        setData(data);
       } else {
         alert("Something went wrong");
       }
@@ -63,20 +63,24 @@ function App() {
             <thead>
               <tr>
                 <th>#</th>
-                <th>State</th>
-                <th>Death</th>
-                <th>Confirmed cases</th>
+                {data.schema &&
+                  data.schema.map((schemaElement, index) => (
+                    <th key={`schema${index}`}>{schemaElement.name}</th>
+                  ))}
               </tr>
             </thead>
             <tbody>
-              {data.map((el, index) => (
-                <tr key={index}>
-                  <td>{index}</td>
-                  <td>{el.cells[0]}</td>
-                  <td>{el.cells[1]}</td>
-                  <td>{el.cells[2]}</td>
-                </tr>
-              ))}
+              {data.data &&
+                data.data.map((el, index) => (
+                  <tr key={index}>
+                    <td>{index}</td>
+                    <td>{el.cells[0].rawValue}</td>
+                    <td>{el.cells[1].rawValue}</td>
+                    <td>{el.cells[2].rawValue}</td>
+                    <td>{el.cells[3].rawValue}</td>
+                    <td>{el.cells[4].rawValue}</td>
+                  </tr>
+                ))}
             </tbody>
           </Table>
         </Col>
