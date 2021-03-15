@@ -58,7 +58,7 @@ function App() {
             </InputGroup.Append>
           </InputGroup>
         </Col>
-        <Col md={{ span: 6, offset: 4 }}>
+        <Col md={{ span: 6, offset: 3 }}>
           <Table striped bordered hover variant="dark">
             <thead>
               <tr>
