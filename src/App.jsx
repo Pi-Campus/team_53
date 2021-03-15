@@ -74,11 +74,9 @@ function App() {
                 data.data.map((el, index) => (
                   <tr key={index}>
                     <td>{index}</td>
-                    <td>{el.cells[0].rawValue}</td>
-                    <td>{el.cells[1].rawValue}</td>
-                    <td>{el.cells[2].rawValue}</td>
-                    <td>{el.cells[3].rawValue}</td>
-                    <td>{el.cells[4].rawValue}</td>
+                    {el.cells.map((element, index) => (
+                      <td key={`element${index}`}>{element.rawValue}</td>
+                    ))}
                   </tr>
                 ))}
             </tbody>
