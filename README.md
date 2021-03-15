@@ -1,3 +1,22 @@
-# Pi Day Coding Competition 2021
+# Team53 - CovidTracker - Getting Started 
 
-Please find rules of the competition in [RULES.md](https://github.com/Pi-Campus/team_53/blob/main/RULES.md) and APIs quick tutorial and examples in [API.md](https://github.com/Pi-Campus/team_53/blob/main/API.md).
+Write what you wanna know about Covid in the Text Area and you're ready to go,
+table will dynamically update for every request.
+
+Query Example:
+
+- Total Deaths for \<countryname\>
+- Increasing percentage of positive in \<countryname\>
+
+# Getting Started 
+
+Clone then
+
+### `npm install`
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+
