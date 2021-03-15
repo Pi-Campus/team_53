@@ -1,10 +1,17 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { InputGroup, FormControl, Button, Row, Col } from "react-bootstrap";
+import {
+  InputGroup,
+  FormControl,
+  Button,
+  Row,
+  Col,
+  Table,
+} from "react-bootstrap";
 import React, { useState } from "react";
 
 function App() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [query, setQuery] = useState("");
 
   const fetchData = async () => {
@@ -22,8 +29,8 @@ function App() {
       );
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
-        setData(data);
+        console.log(data.data);
+        setData(data.data);
       } else {
         alert("Something went wrong");
       }
@@ -50,6 +57,28 @@ function App() {
               </Button>
             </InputGroup.Append>
           </InputGroup>
+        </Col>
+        <Col md={{ span: 6, offset: 4 }}>
+          <Table striped bordered hover variant="dark">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>State</th>
+                <th>Death</th>
+                <th>Confirmed cases</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((el, index) => (
+                <tr key={index}>
+                  <td>{index}</td>
+                  <td>{el.cells[0]}</td>
+                  <td>{el.cells[1]}</td>
+                  <td>{el.cells[2]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
         </Col>
       </Row>
     </div>
